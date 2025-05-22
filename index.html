@@ -1,0 +1,8 @@
+import json
+
+# Save the matched data as JSON so we can embed it in HTML
+json_path = "/mnt/data/matched_data.json"
+with open(json_path, "w") as f:
+    json.dump(matched_data, f, default=str)  # Convert non-serializable fields like time
+
+json_path
