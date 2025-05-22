@@ -1,6 +1,8 @@
-# Load both sheets into dataframes
-drivers_df = excel_data.parse('Drivers')
-passengers_df = excel_data.parse('Passengers')
+import json
 
-# Display the first few rows of each to understand the structure
-drivers_df.head(), passengers_df.head()
+# Save the matched data as JSON so we can embed it in HTML
+json_path = "/mnt/data/matched_data.json"
+with open(json_path, "w") as f:
+    json.dump(matched_data, f, default=str)  # Convert non-serializable fields like time
+
+json_path
